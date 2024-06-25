@@ -42,9 +42,9 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 #include "tcl.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "",      tile    },    /* first entry is default */
+	{ "",      tile    },    /* first entry is default */
 	{ "",      NULL    },    /* no layout function means floating behavior */
-	{ "" ,      monocle },
+	{ "" ,      monocle },
 	{ "",      tcl     },
 
 };
