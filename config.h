@@ -21,7 +21,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
+static const char *tags[] = { "", "", "", "", "", "", "", "", ""};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -72,11 +72,19 @@ static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,             		XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,	                XK_n,  	   spawn,          SHCMD("pcmanfm &") },
+	{ MODKEY,             		XK_g,	   spawn,          SHCMD("brave https://chat.openai.com &") },
+	{ MODKEY|ShiftMask,     	XK_t,	   spawn,          SHCMD("firefox https://tradingview.com/chart/jgs0xOGh &") },
+	{ MODKEY,             		XK_e,	   spawn,          SHCMD("firefox https://excalidraw.com &") },
+	{ MODKEY,             		XK_y,	   spawn,          SHCMD("firefox https://youtube.com &") },
+	{ MODKEY,             		XK_f,	   spawn,          SHCMD("firefox &") },
+	{ MODKEY2,	                XK_n,  	   spawn,          SHCMD("firefox https://notion.so &") },
+	{ MODKEY,                       XK_d,	   spawn,          SHCMD("firefox https://discord.com/channels/@me &") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
-	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
+	{ MODKEY2,                      XK_i,      incnmaster,     {.i = +1 } },
+	{ MODKEY2,                      XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
@@ -85,15 +93,15 @@ static const Key keys[] = {
 	{ MODKEY2,                      XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY2,                      XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_n,      setlayout,      {.v = &layouts[3]} },
+	{ MODKEY,                       XK_comma,  setlayout,      {.v = &layouts[3]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
-	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
+	{ MODKEY2,                      XK_comma,  focusmon,       {.i = -1 } },
+	{ MODKEY2,                      XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,	 	        XK_Tab, shiftview,         {.i = +1 } },
