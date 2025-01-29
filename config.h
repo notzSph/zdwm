@@ -6,7 +6,7 @@ static const unsigned int gappx     = 2;        /* gap pixel between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "anonymous-pro:size=10:antialias=true; fontawesome:size=13:antialias=true" };
+static const char *fonts[]          = { "anonymous-pro:size=10:antialias=true; fontawesome:size=11:antialias=true" };
 static const char dmenufont[]       = "anonymous-pro:size=10:antialias=true";
 static const char col_bg_norm[]     = "#020203";
 static const char col_nborder[]     = "#444444";
@@ -73,13 +73,16 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,             		XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,	                XK_n,  	   spawn,          SHCMD("pcmanfm &") },
-	{ MODKEY,             		XK_g,	   spawn,          SHCMD("brave https://chat.openai.com &") },
+	{ MODKEY,             		XK_g,	   spawn,          SHCMD("firefox https://chat.openai.com &") },
 	{ MODKEY|ShiftMask,     	XK_t,	   spawn,          SHCMD("firefox https://tradingview.com/chart/jgs0xOGh &") },
 	{ MODKEY,             		XK_e,	   spawn,          SHCMD("firefox https://excalidraw.com &") },
 	{ MODKEY,             		XK_y,	   spawn,          SHCMD("firefox https://youtube.com &") },
 	{ MODKEY,             		XK_f,	   spawn,          SHCMD("firefox &") },
 	{ MODKEY2,	                XK_n,  	   spawn,          SHCMD("firefox https://notion.so &") },
 	{ MODKEY,                       XK_d,	   spawn,          SHCMD("firefox https://discord.com/channels/@me &") },
+	{ MODKEY,                       XK_s,	   spawn,          SHCMD("firefox https://open.spotify.com/collection/tracks &") },
+	{ MODKEY2|ShiftMask,            XK_t,	   spawn,          SHCMD("firefox https://web.telegram.org/a &") },
+	{ MODKEY|MODKEY2|ShiftMask,     XK_s,	   spawn,          SHCMD("shutdown now") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
