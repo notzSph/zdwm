@@ -1,6 +1,5 @@
 # build artifacts
 zdwm
-dwm
 *.o
 *.tar
 *.tar.gz
