@@ -8,5 +8,6 @@ zdwm
 config.h
 
 # backup files
+*.orig
 config.def.h.bak
 *~
