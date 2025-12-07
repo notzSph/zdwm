@@ -1,0 +1,13 @@
+# build artifacts
+zdwm
+dwm
+*.o
+*.tar
+*.tar.gz
+
+# generated config
+config.h
+
+# backup files
+config.def.h.bak
+*~
