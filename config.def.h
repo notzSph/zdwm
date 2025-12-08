@@ -21,15 +21,15 @@
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* Firefox */
-#define CMD_FF_DISCORD   "MOZ_WM_CLASS=FFDiscord   firefox --no-remote< --new-window 'https://discord.com/channels/@me'"
-#define CMD_FF_TV        "MOZ_WM_CLASS=FFTrading   firefox --no-remote< --new-window 'https://tradingview.com/chart/jgs0xOGh'"
-#define CMD_FF_GENERIC   "MOZ_WM_CLASS=FFBrowser   firefox --no-remote< --new-window"
-#define CMD_FF_CHATGPT   "MOZ_WM_CLASS=FFChatGPT   firefox --no-remote< --new-window 'https://chat.openai.com'"
-#define CMD_FF_EXCAL     "MOZ_WM_CLASS=FFExcal     firefox --no-remote< --new-window 'https://excalidraw.com'"
-#define CMD_FF_NOTION    "MOZ_WM_CLASS=FFNotion    firefox --no-remote< --new-window 'https://notion.so'"
-#define CMD_FF_YT        "MOZ_WM_CLASS=FFYoutube   firefox --no-remote< --new-window 'https://youtube.com'"
-#define CMD_FF_SPOTIFY   "MOZ_WM_CLASS=FFSpotify   firefox --no-remote< --new-window 'https://open.spotify.com/collection/tracks'"
-#define CMD_FF_TELEGRAM  "MOZ_WM_CLASS=FFTelegram  firefox --no-remote< --new-window 'https://web.telegram.org/a'"
+#define CMD_FF_DISCORD   "MOZ_WM_CLASS=FFDiscord   firefox --no-remote --new-window 'https://discord.com/channels/@me'"
+#define CMD_FF_TV        "MOZ_WM_CLASS=FFTrading   firefox --no-remote --new-window 'https://tradingview.com/chart/jgs0xOGh'"
+#define CMD_FF_GENERIC   "MOZ_WM_CLASS=FFBrowser   firefox --no-remote --new-window"
+#define CMD_FF_CHATGPT   "MOZ_WM_CLASS=FFChatGPT   firefox --no-remote --new-window 'https://chat.openai.com'"
+#define CMD_FF_EXCAL     "MOZ_WM_CLASS=FFExcal     firefox --no-remote --new-window 'https://excalidraw.com'"
+#define CMD_FF_NOTION    "MOZ_WM_CLASS=FFNotion    firefox --no-remote --new-window 'https://notion.so'"
+#define CMD_FF_YT        "MOZ_WM_CLASS=FFYoutube   firefox --no-remote --new-window 'https://youtube.com'"
+#define CMD_FF_SPOTIFY   "MOZ_WM_CLASS=FFSpotify   firefox --no-remote --new-window 'https://open.spotify.com/collection/tracks'"
+#define CMD_FF_TELEGRAM  "MOZ_WM_CLASS=FFTelegram  firefox --no-remote --new-window 'https://web.telegram.org/a'"
 
 /* STYLES */
 
@@ -63,7 +63,7 @@ static const char *fonts[] = {
 static const char dmenufont[] = "anonymous-pro:size=10:antialias=true";
 
 /* Colors */
-static const char col_bg_norm[]. = "#020203";
+static const char col_bg_norm[]  = "#020203";
 static const char col_nborder[]  = "#444444";
 static const char col_fg_norm[]  = "#e6e6e6";
 static const char col_fg_sel[] 	 = "#ff8800";
@@ -135,7 +135,7 @@ static const Key keys[] = {
     { MODKEY|ShiftMask,             XK_c,           killclient,     {0} },
     { MODKEY|ShiftMask,             XK_q,           quit,           {0} },
 	{ MODKEY|MODKEY2|ShiftMask,     XK_s,           spawn,          SHCMD("shutdown now")  },
-	{ MODKEY|MODKEY2|ShiftMask,     XK_s,           spawn,          SHCMD("reboot")		   },
+	{ MODKEY|MODKEY2|ShiftMask,     XK_r,           spawn,          SHCMD("reboot")		   },
     
 	/* Screen Recording */
     { MODKEY,                       XK_F4,          spawn,          SHCMD("~/scripts/screenshot_full.sh")   },
