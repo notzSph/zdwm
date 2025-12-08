@@ -18,7 +18,7 @@
 /* Firefox */
 #define CMD_FF_DISCORD   "firefox --class FFDiscord  --no-remote -P discord  --new-window 'https://discord.com/channels/@me'"
 #define CMD_FF_TV        "firefox --class FFTrading  --no-remote -P trading  --new-window 'https://tradingview.com/chart/jgs0xOGh'"
-#define CMD_FF_GENERIC   "firefox --class FFBrowser  --no-remote -P browser  --new-window"
+#define CMD_FF_GENERIC   "firefox --class FFBrowser  --no-remote -P default  --new-window"
 #define CMD_FF_CHATGPT   "firefox --class FFChatGPT  --no-remote -P chatGPT  --new-window 'https://chat.openai.com'"
 #define CMD_FF_EXCAL     "firefox --class FFExcal    --no-remote -P excal    --new-window 'https://excalidraw.com'"
 #define CMD_FF_NOTION    "firefox --class FFNotion   --no-remote -P notion   --new-window 'https://notion.so'"
