@@ -110,7 +110,7 @@ static const Rule rules[] = {
 static char dmenumon[2] = "0";
 
 static const char *dmenucmd[] = {
-	"dmenu_run", "-m", dmenumon,
+	"zdmenu_run", "-m", dmenumon,
 	"-fn", dmenufont,
 	"-nb", col_bg_norm,
 	"-nf", col_fg_norm,
