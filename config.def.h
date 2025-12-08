@@ -18,7 +18,7 @@
 /* HELPERS */
 
 /* Shell */
-#define SHCMD(cmd)              { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
+#define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* Firefox */
 #define CMD_FF_DISCORD   "MOZ_WM_CLASS=FFDiscord   firefox --no-remote< --new-window 'https://discord.com/channels/@me'"
@@ -108,6 +108,7 @@ static const Rule rules[] = {
 
 /* CMD */
 static char dmenumon[2] = "0";
+
 static const char *dmenucmd[] = {
 	"dmenu_run", "-m", dmenumon,
 	"-fn", dmenufont,
@@ -135,6 +136,14 @@ static const Key keys[] = {
     { MODKEY|ShiftMask,             XK_q,           quit,           {0} },
 	{ MODKEY|MODKEY2|ShiftMask,     XK_s,           spawn,          SHCMD("shutdown now")  },
 	{ MODKEY|MODKEY2|ShiftMask,     XK_s,           spawn,          SHCMD("reboot")		   },
+    
+	/* Screen Recording */
+    { MODKEY,                       XK_F4,          spawn,          SHCMD("~/scripts/screenshot_full.sh")   },
+	{ MODKEY,                       XK_F5,          spawn,          SHCMD("~/scripts/record_full.sh")       },
+	{ MODKEY|ShiftMask,             XK_F4,          spawn,          SHCMD("~/scripts/screenshot_select.sh") },
+	{ MODKEY|ShiftMask,             XK_F5,          spawn,          SHCMD("~/scripts/record_select.sh")     },
+	{ MODKEY|MODKEY2|ShiftMask,     XK_F5,          spawn,          SHCMD("~/scripts/stop_record.sh")       },
+
 
 	/* Firefox */
     { MODKEY,                       XK_d,           spawn,          SHCMD(CMD_FF_DISCORD)  },
