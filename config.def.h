@@ -19,7 +19,7 @@
 #define CMD_FF_DISCORD   "firefox --class FFDiscord  --no-remote -P discord  --new-window 'https://discord.com/channels/@me'"
 #define CMD_FF_TV        "firefox --class FFTrading  --no-remote -P trading  --new-window 'https://tradingview.com/chart/jgs0xOGh'"
 #define CMD_FF_GENERIC   "firefox --class FFBrowser  --no-remote -P default  --new-window"
-#define CMD_FF_CHATGPT   "firefox --class FFChatGPT  --no-remote -P chatGPT  --new-window 'https://chat.openai.com'"
+#define CMD_FF_CHATGPT   "firefox --class FFChatGPT  --no-remote -P chatgpt  --new-window 'https://chat.openai.com'"
 #define CMD_FF_EXCAL     "firefox --class FFExcal    --no-remote -P excal    --new-window 'https://excalidraw.com'"
 #define CMD_FF_NOTION    "firefox --class FFNotion   --no-remote -P notion   --new-window 'https://notion.so'"
 #define CMD_FF_YT        "firefox --class FFYoutube  --no-remote -P youtube  --new-window 'https://youtube.com'"
@@ -39,6 +39,7 @@ static const int topbar 			  = 1;
 
 /* LAYOUT PATCHES */
 #include "tcl.c"
+#include "horizgrid.c"
 
 /* Layouts */
 static const float mfact 		= 0.55;
@@ -52,6 +53,7 @@ static const Layout layouts[] = {
 	{"", 		NULL	},
 	{"", 		monocle },
 	{"", 		tcl		},
+	{"#", 		horizgrid},
 };
 
 /* Fonts */
@@ -180,6 +182,7 @@ static const Key keys[] = {
     { MODKEY2,                      XK_f,           setlayout,      {.v = &layouts[1]} },
     { MODKEY,                       XK_m,           setlayout,      {.v = &layouts[2]} },
     { MODKEY,                       XK_comma,       setlayout,      {.v = &layouts[3]} },
+    { MODKEY|ShiftMask,             XK_comma,       setlayout,      {.v = &layouts[4]} },
     { MODKEY,                       XK_space,       setlayout,      {0} },
     { MODKEY|ShiftMask,             XK_space,       togglefloating, {0} },
 
