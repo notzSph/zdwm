@@ -1,10 +1,5 @@
 /* See LICENSE file for copyright and license details. */
 
-/* PATCHES */
-#include "tcl.c"
-#include "shiftview.c"
-#include "movestack.c"
-
 /* MACROS */
 #define MODKEY Mod4Mask
 #define MODKEY2 Mod1Mask
@@ -21,15 +16,15 @@
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* Firefox */
-#define CMD_FF_DISCORD   "MOZ_WM_CLASS=FFDiscord   firefox --no-remote --new-window 'https://discord.com/channels/@me'"
-#define CMD_FF_TV        "MOZ_WM_CLASS=FFTrading   firefox --no-remote --new-window 'https://tradingview.com/chart/jgs0xOGh'"
-#define CMD_FF_GENERIC   "MOZ_WM_CLASS=FFBrowser   firefox --no-remote --new-window"
-#define CMD_FF_CHATGPT   "MOZ_WM_CLASS=FFChatGPT   firefox --no-remote --new-window 'https://chat.openai.com'"
-#define CMD_FF_EXCAL     "MOZ_WM_CLASS=FFExcal     firefox --no-remote --new-window 'https://excalidraw.com'"
-#define CMD_FF_NOTION    "MOZ_WM_CLASS=FFNotion    firefox --no-remote --new-window 'https://notion.so'"
-#define CMD_FF_YT        "MOZ_WM_CLASS=FFYoutube   firefox --no-remote --new-window 'https://youtube.com'"
-#define CMD_FF_SPOTIFY   "MOZ_WM_CLASS=FFSpotify   firefox --no-remote --new-window 'https://open.spotify.com/collection/tracks'"
-#define CMD_FF_TELEGRAM  "MOZ_WM_CLASS=FFTelegram  firefox --no-remote --new-window 'https://web.telegram.org/a'"
+#define CMD_FF_DISCORD   "firefox --class FFDiscord  --no-remote -P discord  --new-window 'https://discord.com/channels/@me'"
+#define CMD_FF_TV        "firefox --class FFTrading  --no-remote -P trading  --new-window 'https://tradingview.com/chart/jgs0xOGh'"
+#define CMD_FF_GENERIC   "firefox --class FFBrowser  --no-remote -P browser  --new-window"
+#define CMD_FF_CHATGPT   "firefox --class FFChatGPT  --no-remote -P chatGPT  --new-window 'https://chat.openai.com'"
+#define CMD_FF_EXCAL     "firefox --class FFExcal    --no-remote -P excal    --new-window 'https://excalidraw.com'"
+#define CMD_FF_NOTION    "firefox --class FFNotion   --no-remote -P notion   --new-window 'https://notion.so'"
+#define CMD_FF_YT        "firefox --class FFYoutube  --no-remote -P youtube  --new-window 'https://youtube.com'"
+#define CMD_FF_SPOTIFY   "firefox --class FFSpotify  --no-remote -P spotify  --new-window 'https://open.spotify.com/collection/tracks'"
+#define CMD_FF_TELEGRAM  "firefox --class FFTelegram --no-remote -P telegram --new-window 'https://web.telegram.org/a'"
 
 /* STYLES */
 
@@ -39,6 +34,9 @@ static const unsigned int gappx 	= 2;
 static const unsigned int snap 		= 32;
 static const int showbar 			= 1;
 static const int topbar 			= 1;
+
+/* LAYOUT PATCHES */
+#include "tcl.c"
 
 /* Layouts */
 static const float mfact 		= 0.55;
@@ -121,6 +119,10 @@ static const char *dmenucmd[] = {
 
 static const char *termcmd[] = { "urxvt", NULL };
 
+/* LAYOUT VIEW PATCHES */
+#include "shiftview.c"
+#include "movestack.c"
+
 /* KEYS */
 
 static const Key keys[] = {
@@ -143,7 +145,6 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_F4,          spawn,          SHCMD("~/scripts/screenshot_select.sh") },
 	{ MODKEY|ShiftMask,             XK_F5,          spawn,          SHCMD("~/scripts/record_select.sh")     },
 	{ MODKEY|MODKEY2|ShiftMask,     XK_F5,          spawn,          SHCMD("~/scripts/stop_record.sh")       },
-
 
 	/* Firefox */
     { MODKEY,                       XK_d,           spawn,          SHCMD(CMD_FF_DISCORD)  },
