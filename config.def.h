@@ -112,7 +112,7 @@ static const char *dmenucmd[] = {
 	"-fn", dmenufont,
 	"-nb", col_bg_norm,
 	"-nf", col_fg_norm,
-	"-sb", col_fg_dmenu,
+	"-sb", col_fg_sel,
 	"-sf", col_bg_sel,
 	NULL
 };
