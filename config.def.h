@@ -29,11 +29,13 @@
 /* STYLES */
 
 /* Appearence */
-static const unsigned int borderpx	= 1;
-static const unsigned int gappx 	= 2;
-static const unsigned int snap 		= 32;
-static const int showbar 			= 1;
-static const int topbar 			= 1;
+static const unsigned int borderalpha = OPAQUE;
+static const unsigned int baralpha    = 0x99;
+static const unsigned int borderpx	  = 1;
+static const unsigned int gappx 	  = 2;
+static const unsigned int snap 	      = 32;
+static const int showbar 			  = 1;
+static const int topbar 			  = 1;
 
 /* LAYOUT PATCHES */
 #include "tcl.c"
